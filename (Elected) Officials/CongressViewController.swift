@@ -8,83 +8,86 @@
 
 import UIKit
 
-class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate {
     //MARK: - Properties
-    let states: [String] = ["Alabama",
-                            "Alaska",
-                            "Arizona",
-                            "Arkansas",
-                            "California",
-                            "Colorado",
-                            "Connecticut",
-                            "Delaware",
-                            "Florida",
-                            "Georgia",
-                            "Hawaii",
-                            "Idaho",
-                            "Illinois",
-                            "Indiana",
-                            "Iowa",
-                            "Kansas",
-                            "Kentucky",
-                            "Louisiana",
-                            "Maine",
-                            "Maryland",
-                            "Massachusetts",
-                            "Michigan",
-                            "Minnesota",
-                            "Mississippi",
-                            "Missouri",
-                            "Montana",
-                            "Nebraska",
-                            "Nevada",
-                            "New Hampshire",
-                            "New Jersey",
-                            "New Mexico",
-                            "New York",
-                            "North Carolina",
-                            "North Dakota",
-                            "Ohio",
-                            "Oklahoma",
-                            "Oregon",
-                            "Pennsylvania",
-                            "Rhode Island",
-                            "South Carolina",
-                            "South Dakota",
-                            "Tennessee",
-                            "Texas",
-                            "Utah",
-                            "Vermont",
-                            "Virginia",
-                            "Washington",
-                            "West Virginia",
-                            "Wisconsin",
-                            "Wyoming",
-                            "Puerto Rico"
+    let states: [(name: String, key: String)] = [(name: "Alabama", key: "AL"),
+                                                 (name: "Alaska", key: "AK"),
+                                                 (name: "Arizona", key: "AZ"),
+                                                 (name: "Arkansas", key: "AR"),
+                                                 (name: "California", key: "CA"),
+                                                 (name: "Colorado", key: "CO"),
+                                                 (name: "Connecticut", key: "CT"),
+                                                 (name: "Delaware", key: "DE"),
+                                                 (name: "Florida", key: "FL"),
+                                                 (name: "Georgia", key: "GA"),
+                                                 (name: "Hawaii", key: "HI"),
+                                                 (name: "Idaho", key: "ID"),
+                                                 (name: "Illinois", key: "IL"),
+                                                 (name: "Indiana", key:"IN" ),
+                                                 (name: "Iowa", key: "IA"),
+                                                 (name: "Kansas", key: "KS"),
+                                                 (name: "Kentucky", key: "KY"),
+                                                 (name: "Louisiana", key: "LA"),
+                                                 (name: "Maine", key: "ME"),
+                                                 (name: "Maryland", key: "MD"),
+                                                 (name: "Massachusetts", key: "MA"),
+                                                 (name: "Michigan", key: "MI"),
+                                                 (name: "Minnesota", key: "MN"),
+                                                 (name: "Mississippi", key: "MS"),
+                                                 (name: "Missouri", key: "MO"),
+                                                 (name: "Montana", key: "MT"),
+                                                 (name: "Nebraska", key: "NE"),
+                                                 (name: "Nevada", key: "NV"),
+                                                 (name: "New Hampshire", key: "NH"),
+                                                 (name: "New Jersey", key: "NJ"),
+                                                 (name: "New Mexico", key: "NM"),
+                                                 (name: "New York", key: "NY"),
+                                                 (name: "North Carolina", key: "NC"),
+                                                 (name: "North Dakota", key: "ND"),
+                                                 (name: "Ohio", key: "OH"),
+                                                 (name: "Oklahoma", key: "OK"),
+                                                 (name: "Oregon", key: "OR"),
+                                                 (name: "Pennsylvania", key: "PA"),
+                                                 (name: "Rhode Island", key: "RI"),
+                                                 (name: "South Carolina", key: "SC"),
+                                                 (name: "South Dakota", key: "SD"),
+                                                 (name: "Tennessee", key: "TN"),
+                                                 (name: "Texas", key: "TX"),
+                                                 (name: "Utah", key: "UT"),
+                                                 (name: "Vermont", key: "VT"),
+                                                 (name: "Virginia", key: "VA"),
+                                                 (name: "Washington", key: "WA"),
+                                                 (name: "West Virginia", key: "WV"),
+                                                 (name: "Wisconsin", key: "WI"),
+                                                 (name: "Wyoming", key: "WY"),
+                                                 (name: "Puerto Rico", key: "PR")
     ]
     var congressMembers: [CongressionalData] = [CongressionalData]()
     
     //MARK: - Outlets
     @IBOutlet weak var statePickerView: UIPickerView!
     
+    
     //MARK: - Methods
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadCongressMembers()
+    }
+    
+    internal func loadCongressMembers() {
         APIRequestManager.manager.getData(apiEndpoint: CongressionalData.apiEndpoint) { (data: Data?) in
             if let d = data {
                 if let congressMembers = CongressionalData.createCongressionalDataArray(from: d) {
                     self.congressMembers = congressMembers
                 }
             }
-            ///////PUT THIS INTO A LOAD FUNCTION FOR AN EASIER READ.
         }
     }
+    
+    internal func filterByRoleType(roleType: String) -> [CongressionalData] {
+        return congressMembers.filter { $0.roleType == roleType }
+    }
+    
     
     //MARK: - Picker View Data Source Methods
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -96,22 +99,53 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return states[row]
+        return states[row].name
     }
     
+    
     //MARK: - Picker View Delegate Method
-    //    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    //
-    //    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //Filter function by State
+    }
+    
     
     //    //MARK: - Collection View Data Source Methods
-    //    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    //
-    //    }
-    //
-    //    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    //
-    //    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return filterByRoleType(roleType: "senator").count
+        case 1:
+            return filterByRoleType(roleType: "representative").count
+        default:
+            return 0
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CongressMemberCell", for: indexPath)
+        
+        switch indexPath.section {
+        case 0:
+            let currentSenator = filterByRoleType(roleType: "senator").filter({ (CongressionalData: CongressionalData) -> Bool in
+                CongressionalData.state == states[statePickerView.selectedRow(inComponent: 1)].key
+            })
+            cell.congressMemberNameLabel.text = currentSenator[indexPath.row].name
+        default:
+            let currentRep = filterByRoleType(roleType: "representative").filter({ (CongressionalData: CongressionalData) -> Bool in
+                CongressionalData.state == states[statePickerView.selectedRow(inComponent: 1)].key
+            })
+            cell.congressMemberNameLabel.text = currentRep[indexPath.row].name
+        }
+        
+        return cell
+
+    }
+    
     
     /*
      // MARK: - Navigation

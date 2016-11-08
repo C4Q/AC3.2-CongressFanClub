@@ -31,20 +31,44 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CX6-uC-UVc">
                                 <rect key="frame" x="16" y="280" width="343" height="387"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q3i-e1-YeH">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q3i-e1-YeH">
+                                    <size key="itemSize" width="179" height="173"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="K0W-D8-mgB">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CongressMemberCell" id="K0W-D8-mgB" customClass="CongressMemberCollectionViewCell" customModule="_Elected__Officials" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="173"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="179" height="173"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lm0-m3-bpU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="173"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFu-0H-A4R">
+                                                    <rect key="frame" x="8" y="144" width="163" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="lm0-m3-bpU" firstAttribute="top" secondItem="K0W-D8-mgB" secondAttribute="top" id="0s5-2b-pRz"/>
+                                            <constraint firstAttribute="trailing" secondItem="lm0-m3-bpU" secondAttribute="trailing" id="9vm-F7-I2X"/>
+                                            <constraint firstItem="lm0-m3-bpU" firstAttribute="leading" secondItem="K0W-D8-mgB" secondAttribute="leading" id="Ev2-aa-bL6"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="FFu-0H-A4R" secondAttribute="trailing" id="Upq-i3-gXp"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="FFu-0H-A4R" secondAttribute="bottom" id="XVi-FT-kfv"/>
+                                            <constraint firstItem="FFu-0H-A4R" firstAttribute="leading" secondItem="K0W-D8-mgB" secondAttribute="leadingMargin" id="f6d-r9-eeZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="lm0-m3-bpU" secondAttribute="bottom" id="k2h-5L-Sjo"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="congressMemberImageView" destination="lm0-m3-bpU" id="yxG-E4-0iZ"/>
+                                            <outlet property="congressMemberNameLabel" destination="FFu-0H-A4R" id="knH-x2-zGf"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

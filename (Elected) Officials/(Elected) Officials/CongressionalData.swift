@@ -9,13 +9,13 @@
 import Foundation
 
 enum ParsingErrors: Error {
-    case partyError, personError, firstnameError, genderError, idError, lastnameError, nameError, stateError
+    case partyError, personError, firstnameError, genderError, idError, lastnameError, nameError, stateError, roleTypeError
 }
 
 class CongressionalData {
     
     //MARK: - Properties
-    static let apiEndpoint: String = "https://www.govtrack.us/api/v2/role?current=true"
+    static let apiEndpoint: String = "https://www.govtrack.us/api/v2/role?current=true&limit=540"
     var party: String
     var firstname: String
     var gender: String
@@ -23,10 +23,14 @@ class CongressionalData {
     var lastname: String
     var name: String
     var state: String
+    var roleType: String
+    var imageURL: String {
+        return "https://www.govtrack.us/data/photos/\(id)-200px.jpeg"
+    }
     
     
     //MARK: - Initializers
-    init(party: String, firstname: String, gender: String, id: Int, lastname: String, name: String, state: String) {
+    init(party: String, firstname: String, gender: String, id: Int, lastname: String, name: String, state: String, roleType: String) {
         self.party = party
         self.firstname = firstname
         self.gender = gender
@@ -34,6 +38,7 @@ class CongressionalData {
         self.lastname = lastname
         self.name = name
         self.state = state
+        self.roleType = roleType
     }
     
     
@@ -90,7 +95,11 @@ class CongressionalData {
                     throw ParsingErrors.stateError
                 }
                 
-                let congressPerson: CongressionalData = CongressionalData(party: party, firstname: firstname, gender: gender, id: id, lastname: lastname, name: name, state: state)
+                guard let roleType = dict["role_type"] as? String else {
+                    throw ParsingErrors.roleTypeError
+                }
+                
+                let congressPerson: CongressionalData = CongressionalData(party: party, firstname: firstname, gender: gender, id: id, lastname: lastname, name: name, state: state, roleType: roleType)
                 
                 allCongressMembers.append(congressPerson)
             }
@@ -116,6 +125,9 @@ class CongressionalData {
         }
         catch ParsingErrors.stateError {
             print("Could not find the state key.")
+        }
+        catch ParsingErrors.roleTypeError {
+            print("Could not find role_type key.")
         }
         catch {
             print("Unknown error encountered!")
