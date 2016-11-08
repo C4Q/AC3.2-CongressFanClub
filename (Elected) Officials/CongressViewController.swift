@@ -64,6 +64,7 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     ]
     internal var congressMembers: [CongressionalData] = [CongressionalData]()
     
+    
     //MARK: - Outlets
     @IBOutlet weak var statePickerView: UIPickerView!
     @IBOutlet weak var congressCollectionView: UICollectionView!
@@ -141,10 +142,42 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 let currentSenator = filterByRoleType(roleType: "senator").filter({ $0.state == states[statePickerView.selectedRow(inComponent: 0)].key
                 })
                 congressCell.congressMemberNameLabel.text = currentSenator[indexPath.row].name
+                
+                if currentSenator[indexPath.row].party == "Republican" {
+                    congressCell.congressMemberNameLabel.textColor = UIColor.red
+                }
+                else {
+                    congressCell.congressMemberNameLabel.textColor = UIColor.blue
+                }
+                
+                APIRequestManager.manager.getData(apiEndpoint: currentSenator[indexPath.row].imageURL, callback: { (data: Data?) in
+                    if let d = data {
+                        DispatchQueue.main.async {
+                            congressCell.congressMemberImageView.image = UIImage(data: d)
+                            congressCell.setNeedsLayout()
+                        }
+                    }
+                })
             default:
                 let currentRep = filterByRoleType(roleType: "representative").filter({ $0.state == states[statePickerView.selectedRow(inComponent: 0)].key
                 })
                 congressCell.congressMemberNameLabel.text = currentRep[indexPath.row].name
+                
+                if currentRep[indexPath.row].party == "Republican" {
+                    congressCell.congressMemberNameLabel.textColor = UIColor.red
+                }
+                else {
+                    congressCell.congressMemberNameLabel.textColor = UIColor.blue
+                }
+                
+                APIRequestManager.manager.getData(apiEndpoint: currentRep[indexPath.row].imageURL, callback: { (data: Data?) in
+                    if let d = data {
+                        DispatchQueue.main.async {
+                            congressCell.congressMemberImageView.image = UIImage(data: d)
+                            congressCell.setNeedsLayout()
+                        }
+                    }
+                })
             }
             
             return congressCell

@@ -13,4 +13,8 @@ class CongressMemberCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var congressMemberImageView: UIImageView!
     @IBOutlet weak var congressMemberNameLabel: UILabel!
     
+    
+    
+    //implement prepareForReuse
+    //imageView.image = nil
 }
