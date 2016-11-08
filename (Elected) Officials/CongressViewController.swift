@@ -62,16 +62,18 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                                                  (name: "Wyoming", key: "WY"),
                                                  (name: "Puerto Rico", key: "PR")
     ]
-    var congressMembers: [CongressionalData] = [CongressionalData]()
+    internal var congressMembers: [CongressionalData] = [CongressionalData]()
     
     //MARK: - Outlets
     @IBOutlet weak var statePickerView: UIPickerView!
+    @IBOutlet weak var congressCollectionView: UICollectionView!
     
     
     //MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCongressMembers()
+        
     }
     
     internal func loadCongressMembers() {
@@ -79,6 +81,9 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             if let d = data {
                 if let congressMembers = CongressionalData.createCongressionalDataArray(from: d) {
                     self.congressMembers = congressMembers
+                }
+                DispatchQueue.main.async {
+                    self.congressCollectionView.reloadData()
                 }
             }
         }
@@ -105,11 +110,11 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     //MARK: - Picker View Delegate Method
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //Filter function by State
+        self.congressCollectionView.reloadData()
     }
     
     
-    //    //MARK: - Collection View Data Source Methods
+    //MARK: - Collection View Data Source Methods
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
@@ -117,33 +122,34 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return filterByRoleType(roleType: "senator").count
+            return filterByRoleType(roleType: "senator").filter({$0.state == states[statePickerView.selectedRow(inComponent: 0)].key
+            }).count
         case 1:
-            return filterByRoleType(roleType: "representative").count
+            return filterByRoleType(roleType: "representative").filter({$0.state == states[statePickerView.selectedRow(inComponent: 0)].key
+            }).count
         default:
             return 0
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CongressMemberCell", for: indexPath)
         
-        switch indexPath.section {
-        case 0:
-            let currentSenator = filterByRoleType(roleType: "senator").filter({ (CongressionalData: CongressionalData) -> Bool in
-                CongressionalData.state == states[statePickerView.selectedRow(inComponent: 1)].key
-            })
-            cell.congressMemberNameLabel.text = currentSenator[indexPath.row].name
-        default:
-            let currentRep = filterByRoleType(roleType: "representative").filter({ (CongressionalData: CongressionalData) -> Bool in
-                CongressionalData.state == states[statePickerView.selectedRow(inComponent: 1)].key
-            })
-            cell.congressMemberNameLabel.text = currentRep[indexPath.row].name
+        if let congressCell = cell as? CongressMemberCollectionViewCell {
+            switch indexPath.section {
+            case 0:
+                let currentSenator = filterByRoleType(roleType: "senator").filter({ $0.state == states[statePickerView.selectedRow(inComponent: 0)].key
+                })
+                congressCell.congressMemberNameLabel.text = currentSenator[indexPath.row].name
+            default:
+                let currentRep = filterByRoleType(roleType: "representative").filter({ $0.state == states[statePickerView.selectedRow(inComponent: 0)].key
+                })
+                congressCell.congressMemberNameLabel.text = currentRep[indexPath.row].name
+            }
+            
+            return congressCell
         }
-        
         return cell
-
     }
     
     

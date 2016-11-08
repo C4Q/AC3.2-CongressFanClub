@@ -72,6 +72,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
+                                    <outlet property="dataSource" destination="pN4-Gw-RWN" id="yfE-GX-6Pl"/>
                                     <outlet property="delegate" destination="pN4-Gw-RWN" id="igp-Ti-8tE"/>
                                 </connections>
                             </collectionView>
@@ -90,6 +91,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="siJ-ZI-peW"/>
                     <connections>
+                        <outlet property="congressCollectionView" destination="CX6-uC-UVc" id="GRM-s1-poG"/>
                         <outlet property="statePickerView" destination="AQb-UT-t3E" id="8K9-zs-I2R"/>
                     </connections>
                 </viewController>
