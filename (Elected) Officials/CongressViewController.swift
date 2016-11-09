@@ -240,17 +240,17 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
  // MARK: - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let collectionViewCell = sender as? CongressMemberCollectionViewCell {
-        let indexPath = self.congressCollectionView.indexPath(for: collectionViewCell)
-        let congressMember = congressMembers[indexPath!.row]
-        
-        if segue.identifier == "congressCellSegue" {
-            if let blb = segue.destination as? BLBViewController {
-                
-            }
-        }
-    }
- }
+// override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    if let collectionViewCell = sender as? CongressMemberCollectionViewCell {
+//        let indexPath = self.congressCollectionView.indexPath(for: collectionViewCell)
+//        let congressMember = congressMembers[indexPath!.row]
+//        
+//        if segue.identifier == "congressCellSegue" {
+//            if let blb = segue.destination as? BLBViewController {
+//                
+//            }
+//        }
+//    }
+// }
 
 }
