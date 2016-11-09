@@ -29,28 +29,28 @@
                                 </connections>
                             </pickerView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CX6-uC-UVc">
-                                <rect key="frame" x="16" y="280" width="343" height="387"/>
+                                <rect key="frame" x="0.0" y="280" width="375" height="387"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q3i-e1-YeH">
-                                    <size key="itemSize" width="179" height="173"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="itemSize" width="180" height="180"/>
+                                    <size key="headerReferenceSize" width="10" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CongressMemberCell" id="K0W-D8-mgB" customClass="CongressMemberCollectionViewCell" customModule="_Elected__Officials" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="179" height="173"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="congressMemberCell" id="K0W-D8-mgB" customClass="CongressMemberCollectionViewCell" customModule="_Elected__Officials" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="180" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="179" height="173"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lm0-m3-bpU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="173"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFu-0H-A4R">
-                                                    <rect key="frame" x="8" y="150.5" width="163" height="14.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="0.40167487157534248" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="8" y="157.5" width="164" height="14.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -69,9 +69,14 @@
                                         <connections>
                                             <outlet property="congressMemberImageView" destination="lm0-m3-bpU" id="yxG-E4-0iZ"/>
                                             <outlet property="congressMemberNameLabel" destination="FFu-0H-A4R" id="knH-x2-zGf"/>
+                                            <segue destination="5au-e1-uEN" kind="show" identifier="congressCellSegue" id="Cgz-hv-E6O"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionHeaderView" id="nbv-oI-2gi" userLabel="sectionHeaderView">
+                                    <rect key="frame" x="0.0" y="0.0" width="10" height="387"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="pN4-Gw-RWN" id="yfE-GX-6Pl"/>
                                     <outlet property="delegate" destination="pN4-Gw-RWN" id="igp-Ti-8tE"/>
@@ -80,13 +85,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="CX6-uC-UVc" secondAttribute="trailing" id="Bad-1s-oYU"/>
                             <constraint firstAttribute="trailing" secondItem="AQb-UT-t3E" secondAttribute="trailing" id="EXb-nG-Ovy"/>
+                            <constraint firstAttribute="trailing" secondItem="CX6-uC-UVc" secondAttribute="trailing" id="F6B-hs-VvZ"/>
                             <constraint firstItem="AQb-UT-t3E" firstAttribute="top" secondItem="OyO-eO-0OE" secondAttribute="bottom" id="FOd-dF-Kc2"/>
                             <constraint firstItem="ryN-SQ-cmM" firstAttribute="top" secondItem="CX6-uC-UVc" secondAttribute="bottom" id="OnQ-5s-srS"/>
                             <constraint firstItem="AQb-UT-t3E" firstAttribute="leading" secondItem="nhj-jI-X2M" secondAttribute="leading" id="Rnf-Xd-nb4"/>
                             <constraint firstItem="CX6-uC-UVc" firstAttribute="top" secondItem="AQb-UT-t3E" secondAttribute="bottom" id="ZzV-sn-8TD"/>
-                            <constraint firstItem="CX6-uC-UVc" firstAttribute="leading" secondItem="nhj-jI-X2M" secondAttribute="leadingMargin" id="kVc-Aj-OIo"/>
+                            <constraint firstItem="CX6-uC-UVc" firstAttribute="leading" secondItem="nhj-jI-X2M" secondAttribute="leading" id="c7D-Y7-h1r"/>
                             <constraint firstItem="CX6-uC-UVc" firstAttribute="top" secondItem="AQb-UT-t3E" secondAttribute="bottom" id="v8c-8F-eGR"/>
                         </constraints>
                     </view>
@@ -99,6 +104,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9b-Zy-KAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1287.2" y="29.23538230884558"/>
+        </scene>
+        <!--Be Like Bill View Controller-->
+        <scene sceneID="pHv-MH-CNb">
+            <objects>
+                <viewController id="5au-e1-uEN" userLabel="Be Like Bill View Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XWd-wG-Xcb"/>
+                        <viewControllerLayoutGuide type="bottom" id="5iB-We-fIz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F6B-lo-9IN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="5mv-Up-RHe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRJ-Mt-tOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3145" y="-44"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="HuB-3m-Pt8">
+            <objects>
+                <tabBarController id="RUd-fn-Oza" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="iFM-Ut-vMM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="5au-e1-uEN" kind="relationship" relationship="viewControllers" id="gXr-Pf-5yy"/>
+                        <segue destination="rJH-Zc-hac" kind="relationship" relationship="viewControllers" id="Mqh-Uw-ZeT"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WUN-4Q-fIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2226" y="493"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="uju-Zq-wYj">
+            <objects>
+                <viewController id="rJH-Zc-hac" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Agu-aZ-rUH"/>
+                        <viewControllerLayoutGuide type="bottom" id="mAK-3z-D47"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BEF-xn-i8m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="sAo-Zs-TNz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wsH-qd-TEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3203" y="727"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KKu-UC-gh3">
@@ -119,4 +180,7 @@
             <point key="canvasLocation" x="348" y="29.23538230884558"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gXr-Pf-5yy"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate {
+class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     //MARK: - Properties
     let states: [(name: String, key: String)] = [(name: "Alabama", key: "AL"),
                                                  (name: "Alaska", key: "AK"),
@@ -63,6 +63,9 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                                                  (name: "Puerto Rico", key: "PR")
     ]
     internal var congressMembers: [CongressionalData] = [CongressionalData]()
+    internal var republicanRed: UIColor = UIColor(red: 207/255, green: 0/255, blue: 15/255, alpha: 1.0)
+    internal var democraticBlue: UIColor = UIColor(red: 30/255, green: 139/255, blue: 195/255, alpha: 1.0)
+    
     
     
     //MARK: - Outlets
@@ -134,7 +137,7 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CongressMemberCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "congressMemberCell", for: indexPath)
         
         if let congressCell = cell as? CongressMemberCollectionViewCell {
             switch indexPath.section {
@@ -144,10 +147,10 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 congressCell.congressMemberNameLabel.text = currentSenator[indexPath.row].name
                 
                 if currentSenator[indexPath.row].party == "Republican" {
-                    congressCell.congressMemberNameLabel.textColor = UIColor.red
+                    congressCell.congressMemberNameLabel.textColor = republicanRed
                 }
                 else {
-                    congressCell.congressMemberNameLabel.textColor = UIColor.blue
+                    congressCell.congressMemberNameLabel.textColor = democraticBlue
                 }
                 
                 APIRequestManager.manager.getData(apiEndpoint: currentSenator[indexPath.row].imageURL, callback: { (data: Data?) in
@@ -164,10 +167,10 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 congressCell.congressMemberNameLabel.text = currentRep[indexPath.row].name
                 
                 if currentRep[indexPath.row].party == "Republican" {
-                    congressCell.congressMemberNameLabel.textColor = UIColor.red
+                    congressCell.congressMemberNameLabel.textColor = republicanRed
                 }
                 else {
-                    congressCell.congressMemberNameLabel.textColor = UIColor.blue
+                    congressCell.congressMemberNameLabel.textColor = democraticBlue
                 }
                 
                 APIRequestManager.manager.getData(apiEndpoint: currentRep[indexPath.row].imageURL, callback: { (data: Data?) in
@@ -185,15 +188,69 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "sectionHeaderView", for: indexPath)
+            return headerView
+        default:
+            assert(false, "Unexpected element kind")
+        }
+    }
+
+    //MARK: - Collection View Delegate Flow Layout Methods
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 5
+//    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
+    
+    
+    
+    
+//1
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        //2
+//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+//        let availableWidth = view.frame.width - paddingSpace
+//        let widthPerItem = availableWidth / itemsPerRow
+//
+//        return CGSize(width: widthPerItem, height: widthPerItem)
+//    }
+//
+//    //3
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return sectionInsets
+//    }
+//
+//    // 4
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return sectionInsets.left
+//    }
+
+
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let collectionViewCell = sender as? CongressMemberCollectionViewCell {
+        let indexPath = self.congressCollectionView.indexPath(for: collectionViewCell)
+        let congressMember = congressMembers[indexPath!.row]
+        
+        if segue.identifier == "congressCellSegue" {
+            if let blb = segue.destination as? BLBViewController {
+                
+            }
+        }
+    }
+ }
+
 }
