@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import TwitterKit
+
 
 class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    
     //MARK: - Properties
     let states: [(name: String, key: String)] = [(name: "Alabama", key: "AL"),
                                                  (name: "Alaska", key: "AK"),
@@ -74,7 +78,7 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCongressMembers()
-        
+
     }
     
     internal func loadCongressMembers() {
@@ -186,6 +190,36 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     
+    //MARK: - HEADER
+
+
+    
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        switch kind {
+        //2
+        case UICollectionElementKindSectionHeader:
+            //3
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                             withReuseIdentifier: "congressHeader",
+                                                                             for: indexPath) as! CongressCollectionReusableView
+           
+            if indexPath.section == 0 {
+                headerView.congressLabel.text = "Senator"
+                headerView.congressLabel.backgroundColor = UIColor.blue
+                return headerView
+            } else {
+                headerView.congressLabel.text = "Representative"
+                return headerView
+            }
+            //            headerView.congressLabel.text = congressMembers[(indexPath as NSIndexPath).section].roleType
+//            return headerView
+        default:
+            //4
+            assert(false, "Unexpected element kind")
+        }
+    }
     /*
      // MARK: - Navigation
      

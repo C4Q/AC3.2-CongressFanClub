@@ -17,4 +17,8 @@ class CongressMemberCollectionViewCell: UICollectionViewCell {
     
     //implement prepareForReuse
     //imageView.image = nil
+    
+    override func prepareForReuse() {
+        self.congressMemberImageView.image = nil
+    }
 }
