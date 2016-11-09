@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		479D1FB71DD24EE7000B8290 /* CongressMemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D1FB61DD24EE7000B8290 /* CongressMemberCollectionViewCell.swift */; };
+		479D1FB91DD399C4000B8290 /* BLBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D1FB81DD399C4000B8290 /* BLBViewController.swift */; };
 		47C47E3F1DD1223F00051151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C47E3E1DD1223F00051151 /* AppDelegate.swift */; };
 		47C47E441DD1223F00051151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C47E421DD1223F00051151 /* Main.storyboard */; };
 		47C47E461DD1223F00051151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47C47E451DD1223F00051151 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		479D1FB61DD24EE7000B8290 /* CongressMemberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongressMemberCollectionViewCell.swift; sourceTree = "<group>"; };
+		479D1FB81DD399C4000B8290 /* BLBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLBViewController.swift; sourceTree = "<group>"; };
 		47C47E3B1DD1223F00051151 /* (Elected) Officials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "(Elected) Officials.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47C47E3E1DD1223F00051151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47C47E431DD1223F00051151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				47C47E561DD1315C00051151 /* CongressionalData.swift */,
 				47C47E3E1DD1223F00051151 /* AppDelegate.swift */,
 				47C47E421DD1223F00051151 /* Main.storyboard */,
+				479D1FB81DD399C4000B8290 /* BLBViewController.swift */,
 				479D1FB61DD24EE7000B8290 /* CongressMemberCollectionViewCell.swift */,
 				47C47E451DD1223F00051151 /* Assets.xcassets */,
 				47C47E471DD1223F00051151 /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47C47E551DD12E5F00051151 /* APIRequestManager.swift in Sources */,
+				479D1FB91DD399C4000B8290 /* BLBViewController.swift in Sources */,
 				479D1FB71DD24EE7000B8290 /* CongressMemberCollectionViewCell.swift in Sources */,
 				47C47E531DD1277500051151 /* CongressViewController.swift in Sources */,
 				47C47E3F1DD1223F00051151 /* AppDelegate.swift in Sources */,
