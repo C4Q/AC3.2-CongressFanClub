@@ -12,7 +12,7 @@ class CongressMemberCollectionViewCell: UICollectionViewCell {
     //MARK: - Outlets
     @IBOutlet weak var congressMemberImageView: UIImageView!
     @IBOutlet weak var congressMemberNameLabel: UILabel!
-    
+
     
     //MARK: - Methods
     override func prepareForReuse() {

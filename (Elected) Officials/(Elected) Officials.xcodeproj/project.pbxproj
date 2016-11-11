@@ -62,11 +62,11 @@
 		47C47E3D1DD1223F00051151 /* (Elected) Officials */ = {
 			isa = PBXGroup;
 			children = (
-				47C47E521DD1277500051151 /* CongressViewController.swift */,
 				47C47E541DD12E5F00051151 /* APIRequestManager.swift */,
 				47C47E561DD1315C00051151 /* CongressionalData.swift */,
 				47C47E3E1DD1223F00051151 /* AppDelegate.swift */,
 				47C47E421DD1223F00051151 /* Main.storyboard */,
+				47C47E521DD1277500051151 /* CongressViewController.swift */,
 				479D1FB81DD399C4000B8290 /* BLBViewController.swift */,
 				479D1FB61DD24EE7000B8290 /* CongressMemberCollectionViewCell.swift */,
 				47C47E451DD1223F00051151 /* Assets.xcassets */,

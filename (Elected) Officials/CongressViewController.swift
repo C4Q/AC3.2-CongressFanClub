@@ -183,6 +183,7 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 })
             }
             
+            
             return congressCell
         }
         return cell
@@ -198,59 +199,46 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             assert(false, "Unexpected element kind")
         }
     }
-
-    //MARK: - Collection View Delegate Flow Layout Methods
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 5
-//    }
     
-
-    
-    
-    
+    //        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    //
+    //
+    //            if let cell = collectionView.cellForItem(at: indexPath) as? CongressMemberCollectionViewCell{
+    //                BLBViewController.congressMem = cell.satanSpawn
+    //            }
+    //        }
     
     
-//1
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        //2
-//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-//        let availableWidth = view.frame.width - paddingSpace
-//        let widthPerItem = availableWidth / itemsPerRow
-//
-//        return CGSize(width: widthPerItem, height: widthPerItem)
-//    }
-//
-//    //3
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return sectionInsets
-//    }
-//
-//    // 4
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return sectionInsets.left
-//    }
-
-
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
-// override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    if let collectionViewCell = sender as? CongressMemberCollectionViewCell {
-//        let indexPath = self.congressCollectionView.indexPath(for: collectionViewCell)
-//        let congressMember = congressMembers[indexPath!.row]
-//        
-//        if segue.identifier == "congressCellSegue" {
-//            if let blb = segue.destination as? BLBViewController {
-//                
-//            }
-//        }
-//    }
-// }
-
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let collectionViewCell = sender as? CongressMemberCollectionViewCell {
+            if let collectionCellIndexPath = self.congressCollectionView.indexPath(for: collectionViewCell) {
+                if let blb = segue.destination as? BLBViewController {
+                    if segue.identifier == "congressCellSegue" {
+                        
+                        switch collectionCellIndexPath.section {
+                        case 0:
+                            let currentSenator = filterByRoleType(roleType: "senator").filter({ $0.state == states[statePickerView.selectedRow(inComponent: 0)].key
+                            })
+                            
+                            blb.firstName = currentSenator[collectionCellIndexPath.item].firstname
+                            blb.gender = currentSenator[collectionCellIndexPath.item].gender
+                            
+                        default:
+                            let currentRep = filterByRoleType(roleType: "representative").filter({ $0.state == states[statePickerView.selectedRow(inComponent: 0)].key
+                            })
+                            
+                            blb.firstName = currentRep[collectionCellIndexPath.item].firstname
+                            blb.gender = currentRep[collectionCellIndexPath.item].gender
+                            
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+    
 }
