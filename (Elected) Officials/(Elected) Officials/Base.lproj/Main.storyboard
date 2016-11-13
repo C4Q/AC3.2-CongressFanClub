@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RUd-fn-Oza">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="S1z-vs-7Yq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,13 +23,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQb-UT-t3E">
-                                <rect key="frame" x="0.0" y="20" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
                                 <connections>
                                     <outlet property="delegate" destination="pN4-Gw-RWN" id="EDP-yU-tB3"/>
                                 </connections>
                             </pickerView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CX6-uC-UVc">
-                                <rect key="frame" x="0.0" y="236" width="375" height="382"/>
+                                <rect key="frame" x="0.0" y="280" width="375" height="387"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q3i-e1-YeH">
 <<<<<<< HEAD
@@ -84,6 +84,7 @@
                                         <connections>
                                             <outlet property="congressMemberImageView" destination="lm0-m3-bpU" id="yxG-E4-0iZ"/>
                                             <outlet property="congressMemberNameLabel" destination="FFu-0H-A4R" id="knH-x2-zGf"/>
+                                            <segue destination="dwQ-7c-f9R" kind="show" identifier="congressCellSegue" id="gqV-wn-0Ht"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -92,8 +93,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="10" height="387"/>
 =======
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionHeaderView" id="nbv-oI-2gi" userLabel="sectionHeaderView">
+<<<<<<< HEAD
                                     <rect key="frame" x="0.0" y="0.0" width="10" height="382"/>
 >>>>>>> master
+=======
+                                    <rect key="frame" x="0.0" y="0.0" width="10" height="387"/>
+>>>>>>> 24fbaae74200a0e4684bd97c9c4cdb6ac60b72cf
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                                 <connections>
@@ -114,7 +119,6 @@
                             <constraint firstItem="CX6-uC-UVc" firstAttribute="top" secondItem="AQb-UT-t3E" secondAttribute="bottom" id="v8c-8F-eGR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="115th United States Congress" id="SC5-OL-ZA5"/>
                     <navigationItem key="navigationItem" id="siJ-ZI-peW"/>
                     <connections>
                         <outlet property="congressCollectionView" destination="CX6-uC-UVc" id="GRM-s1-poG"/>
@@ -124,6 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9b-Zy-KAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="1441" y="30"/>
         </scene>
 <<<<<<< HEAD
@@ -176,6 +181,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WUN-4Q-fIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="478" y="811"/>
+=======
+            <point key="canvasLocation" x="1296.8" y="126.38680659670166"/>
+>>>>>>> 24fbaae74200a0e4684bd97c9c4cdb6ac60b72cf
         </scene>
         <!--BLB View Controller-->
         <scene sceneID="kC7-no-rik">
@@ -189,12 +197,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuK-QN-yAg">
-                                <rect key="frame" x="67" y="213" width="240" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuK-QN-yAg">
+                                <rect key="frame" x="36" y="84" width="303" height="423"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQD-dH-dZn">
+                                <rect key="frame" x="212" y="515" width="127" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Twitter-icon"/>
+                                <connections>
+                                    <action selector="twitterButtonTapped:" destination="dwQ-7c-f9R" eventType="touchUpInside" id="8nT-pp-78q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Id4-kW-aOm">
+                                <rect key="frame" x="38" y="543" width="150" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="News API action here."/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="cuK-QN-yAg" secondAttribute="trailing" constant="20" id="8Km-h6-qwf"/>
+                            <constraint firstItem="cuK-QN-yAg" firstAttribute="top" secondItem="Rg6-b2-77R" secondAttribute="bottom" constant="20" id="DPh-a2-cIY"/>
+                            <constraint firstItem="cuK-QN-yAg" firstAttribute="leading" secondItem="J72-eF-UnH" secondAttribute="leadingMargin" constant="20" id="zLH-JW-PIf"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="HbP-dg-NNH"/>
                     <connections>
@@ -203,7 +228,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qge-XT-l5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1456.8" y="803.74812593703155"/>
+            <point key="canvasLocation" x="2176.8000000000002" y="125.4872563718141"/>
+        </scene>
+        <!--115th United States Congress-->
+        <scene sceneID="KCs-cc-0d4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S1z-vs-7Yq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="115th United States Congress" id="SC5-OL-ZA5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z0y-dp-ozi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pN4-Gw-RWN" kind="relationship" relationship="rootViewController" id="UJG-Xm-VNm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpK-Ys-Hfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="357.60000000000002" y="126.38680659670166"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Twitter-icon" width="128" height="128"/>
+    </resources>
 </document>

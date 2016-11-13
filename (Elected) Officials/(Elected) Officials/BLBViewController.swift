@@ -9,24 +9,60 @@
 import UIKit
 
 class BLBViewController: UIViewController {
+    //MARK: Properties
+    var gender: String?
+    var firstName: String?
+    var sex: String {
+        if self.gender == "male" {
+            return "m"
+        }
+        else {
+            return "f"
+        }
+    }
+
+    
+    
     //MARK: - Outlets
     @IBOutlet weak var memeImageView: UIImageView!
+    
     
     //MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        loadImage()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let cmp = storyboard.instantiateViewController(withIdentifier: "congressMemberPicker")
-//        self.tabBarController?.present(cmp, animated: true, completion: {
-//            print("Hello")
-//        })
-//        
-//    }
+    func loadImage() {
+        var memeApiEndpoint: String {
+            return "http://belikebill.azurewebsites.net/billgen-API.php?default=1&name=\(self.firstName!)&sex=\(sex)"
+        }
+        APIRequestManager.manager.getData(apiEndpoint: memeApiEndpoint) { (data: Data?) in
+            if let d = data {
+                if let memeImage = UIImage(data: d) {
+                    DispatchQueue.main.async {
+                        self.memeImageView.image = memeImage
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    //MARK: - Actions
+    @IBAction func twitterButtonTapped(_ sender: UIButton) {
+        
+    }
+    
+    
+    //    override func viewDidAppear(_ animated: Bool) {
+    //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    //        let cmp = storyboard.instantiateViewController(withIdentifier: "congressMemberPicker")
+    //        self.tabBarController?.present(cmp, animated: true, completion: {
+    //            print("Hello")
+    //        })
+    //
+    //    }
     
     /*
      // MARK: - Navigation
