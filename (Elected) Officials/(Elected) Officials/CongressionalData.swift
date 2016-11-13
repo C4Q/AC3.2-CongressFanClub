@@ -9,7 +9,7 @@
 import Foundation
 
 enum ParsingErrors: Error {
-    case partyError, personError, firstnameError, genderError, idError, lastnameError, nameError, stateError, roleTypeError
+    case partyError, personError, firstnameError, genderError, idError, lastnameError, nameError, stateError, roleTypeError, twitterIDError
 }
 
 class CongressionalData {
@@ -24,13 +24,14 @@ class CongressionalData {
     var name: String
     var state: String
     var roleType: String
+    var twitterID: String
     var imageURL: String {
         return "https://www.govtrack.us/data/photos/\(id)-200px.jpeg"
     }
     
     
     //MARK: - Initializers
-    init(party: String, firstname: String, gender: String, id: Int, lastname: String, name: String, state: String, roleType: String) {
+    init(party: String, firstname: String, gender: String, id: Int, lastname: String, name: String, state: String, roleType: String, twitterID: String) {
         self.party = party
         self.firstname = firstname
         self.gender = gender
@@ -39,6 +40,7 @@ class CongressionalData {
         self.name = name
         self.state = state
         self.roleType = roleType
+        self.twitterID = twitterID
     }
     
     
@@ -99,7 +101,9 @@ class CongressionalData {
                     throw ParsingErrors.roleTypeError
                 }
                 
-                let congressPerson: CongressionalData = CongressionalData(party: party, firstname: firstname, gender: gender, id: id, lastname: lastname, name: name, state: state, roleType: roleType)
+                let twitterID = personDict["twitterid"] as? String
+                
+                let congressPerson: CongressionalData = CongressionalData(party: party, firstname: firstname, gender: gender, id: id, lastname: lastname, name: name, state: state, roleType: roleType, twitterID: twitterID ?? "")
                 
                 allCongressMembers.append(congressPerson)
             }
@@ -128,6 +132,9 @@ class CongressionalData {
         }
         catch ParsingErrors.roleTypeError {
             print("Could not find role_type key.")
+        }
+        catch ParsingErrors.twitterIDError {
+            print("Could not find twitterid key.")
         }
         catch {
             print("Unknown error encountered!")
