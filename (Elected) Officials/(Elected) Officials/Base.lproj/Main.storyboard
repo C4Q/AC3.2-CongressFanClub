@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="S1z-vs-7Yq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="S1z-vs-7Yq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -117,38 +117,111 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuK-QN-yAg">
-                                <rect key="frame" x="36" y="84" width="303" height="423"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQD-dH-dZn">
-                                <rect key="frame" x="212" y="515" width="127" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQD-dH-dZn">
+                                <rect key="frame" x="219" y="523" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="Wuk-Iz-X0i"/>
+                                    <constraint firstAttribute="width" constant="120" id="uei-MN-q1H"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="Twitter-icon"/>
                                 <connections>
                                     <action selector="twitterButtonTapped:" destination="dwQ-7c-f9R" eventType="touchUpInside" id="8nT-pp-78q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Id4-kW-aOm">
-                                <rect key="frame" x="38" y="543" width="150" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="News API action here."/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Id4-kW-aOm">
+                                <rect key="frame" x="36" y="523" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="OjH-st-aeJ"/>
+                                    <constraint firstAttribute="width" constant="120" id="y9E-qQ-aAh"/>
+                                </constraints>
+                                <state key="normal" image="t_logo_291_black"/>
+                                <connections>
+                                    <segue destination="BOD-KJ-9cO" kind="show" identifier="newsSegue" id="04S-8C-cjQ"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jYb-Zc-4yR">
+                                <rect key="frame" x="16" y="64" width="343" height="434"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="cuK-QN-yAg" secondAttribute="trailing" constant="20" id="8Km-h6-qwf"/>
-                            <constraint firstItem="cuK-QN-yAg" firstAttribute="top" secondItem="Rg6-b2-77R" secondAttribute="bottom" constant="20" id="DPh-a2-cIY"/>
-                            <constraint firstItem="cuK-QN-yAg" firstAttribute="leading" secondItem="J72-eF-UnH" secondAttribute="leadingMargin" constant="20" id="zLH-JW-PIf"/>
+                            <constraint firstItem="Id4-kW-aOm" firstAttribute="leading" secondItem="J72-eF-UnH" secondAttribute="leadingMargin" constant="20" id="Ga2-8I-pEV"/>
+                            <constraint firstItem="nQD-dH-dZn" firstAttribute="top" secondItem="jYb-Zc-4yR" secondAttribute="bottom" constant="25" id="HBd-AW-9gA"/>
+                            <constraint firstItem="jYb-Zc-4yR" firstAttribute="trailing" secondItem="J72-eF-UnH" secondAttribute="trailingMargin" id="Lq0-xY-yYs"/>
+                            <constraint firstItem="ICM-Bh-omJ" firstAttribute="top" secondItem="nQD-dH-dZn" secondAttribute="bottom" constant="24" id="Z8J-eb-14G"/>
+                            <constraint firstItem="ICM-Bh-omJ" firstAttribute="top" secondItem="Id4-kW-aOm" secondAttribute="bottom" constant="24" id="awS-OQ-4KK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nQD-dH-dZn" secondAttribute="trailing" constant="20" id="h8y-qg-R0v"/>
+                            <constraint firstItem="jYb-Zc-4yR" firstAttribute="top" secondItem="Rg6-b2-77R" secondAttribute="bottom" id="ic2-bu-9tx"/>
+                            <constraint firstItem="Id4-kW-aOm" firstAttribute="top" secondItem="jYb-Zc-4yR" secondAttribute="bottom" constant="25" id="uG3-wC-b2L"/>
+                            <constraint firstItem="jYb-Zc-4yR" firstAttribute="leading" secondItem="J72-eF-UnH" secondAttribute="leadingMargin" id="zLN-Bw-od9"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="HbP-dg-NNH"/>
                     <connections>
-                        <outlet property="memeImageView" destination="cuK-QN-yAg" id="Vd7-UM-DSN"/>
+                        <outlet property="memeImageView" destination="jYb-Zc-4yR" id="UOg-RK-eEz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qge-XT-l5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2176.8000000000002" y="125.4872563718141"/>
+        </scene>
+        <!--News Table View Controller-->
+        <scene sceneID="29M-ZL-FNK">
+            <objects>
+                <tableViewController id="BOD-KJ-9cO" customClass="NewsTableViewController" customModule="_Elected__Officials" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vbz-ps-DMN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" id="KJ4-Qp-kev" customClass="NewsTableViewCell" customModule="_Elected__Officials" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KJ4-Qp-kev" id="8lw-ao-FaG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbr-Ep-zf3">
+                                            <rect key="frame" x="8" y="8" width="65" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="65" id="9bW-XK-6qb"/>
+                                            </constraints>
+                                            <state key="normal" title="Article"/>
+                                            <connections>
+                                                <action selector="articleButtonTapped:" destination="KJ4-Qp-kev" eventType="touchUpInside" id="C7A-p7-GDz"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xG-yw-esW">
+                                            <rect key="frame" x="81" y="16" width="274" height="10"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Mbr-Ep-zf3" firstAttribute="top" secondItem="8lw-ao-FaG" secondAttribute="top" constant="8" id="8SG-NP-qRS"/>
+                                        <constraint firstItem="0xG-yw-esW" firstAttribute="leading" secondItem="Mbr-Ep-zf3" secondAttribute="trailing" constant="8" id="Baf-Kx-oFB"/>
+                                        <constraint firstItem="0xG-yw-esW" firstAttribute="top" secondItem="8lw-ao-FaG" secondAttribute="topMargin" constant="8" id="KgN-FI-iDg"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0xG-yw-esW" secondAttribute="bottom" constant="9" id="Lav-9A-C1d"/>
+                                        <constraint firstItem="0xG-yw-esW" firstAttribute="leading" secondItem="Mbr-Ep-zf3" secondAttribute="trailing" constant="8" id="Mx4-O5-34X"/>
+                                        <constraint firstAttribute="trailing" secondItem="0xG-yw-esW" secondAttribute="trailing" constant="20" id="Tup-ok-R9o"/>
+                                        <constraint firstItem="Mbr-Ep-zf3" firstAttribute="leading" secondItem="8lw-ao-FaG" secondAttribute="leading" constant="8" id="xyy-h8-7vT"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="snippetLabel" destination="0xG-yw-esW" id="HRK-ht-Zez"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BOD-KJ-9cO" id="teA-X1-eSA"/>
+                            <outlet property="delegate" destination="BOD-KJ-9cO" id="YE4-MM-p9I"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IOB-Wx-iWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3351.1999999999998" y="84.107946026986511"/>
         </scene>
         <!--115th United States Congress-->
         <scene sceneID="KCs-cc-0d4">
@@ -172,5 +245,6 @@
     </scenes>
     <resources>
         <image name="Twitter-icon" width="128" height="128"/>
+        <image name="t_logo_291_black" width="291" height="291"/>
     </resources>
 </document>

@@ -224,6 +224,7 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                             })
                             
                             blb.firstName = currentSenator[collectionCellIndexPath.item].firstname
+                            blb.lastName = currentSenator[collectionCellIndexPath.item].lastname
                             blb.gender = currentSenator[collectionCellIndexPath.item].gender
                             
                         default:
@@ -231,6 +232,7 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                             })
                             
                             blb.firstName = currentRep[collectionCellIndexPath.item].firstname
+                            blb.lastName = currentRep[collectionCellIndexPath.item].lastname
                             blb.gender = currentRep[collectionCellIndexPath.item].gender
                             
                         }

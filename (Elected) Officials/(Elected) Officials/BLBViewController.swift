@@ -12,6 +12,7 @@ class BLBViewController: UIViewController {
     //MARK: Properties
     var gender: String?
     var firstName: String?
+    var lastName: String?
     var sex: String {
         if self.gender == "male" {
             return "m"
@@ -20,12 +21,12 @@ class BLBViewController: UIViewController {
             return "f"
         }
     }
-
+    
     
     
     //MARK: - Outlets
-    @IBOutlet weak var memeImageView: UIImageView!
     
+    @IBOutlet weak var memeImageView: UIImageView!
     
     //MARK: - Methods
     override func viewDidLoad() {
@@ -55,6 +56,7 @@ class BLBViewController: UIViewController {
     }
     
     
+    
     //    override func viewDidAppear(_ animated: Bool) {
     //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
     //        let cmp = storyboard.instantiateViewController(withIdentifier: "congressMemberPicker")
@@ -64,16 +66,20 @@ class BLBViewController: UIViewController {
     //
     //    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "newsSegue" {
+            let dvc = segue.destination as! NewsTableViewController
+            dvc.endPoint = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=31ae7c06e3314e21b83c2b3846fe3f26&q=\(self.firstName)%20\(self.lastName)"
+            
+            
+        }
+    }
 }
 
 
