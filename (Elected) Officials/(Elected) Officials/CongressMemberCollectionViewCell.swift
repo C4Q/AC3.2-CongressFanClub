@@ -14,11 +14,18 @@ class CongressMemberCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var congressMemberNameLabel: UILabel!
     
     
+    //MARK: - Methods
+    override func prepareForReuse() {
+        congressMemberImageView.image = nil
+    }
     
+<<<<<<< HEAD
     //implement prepareForReuse
     //imageView.image = nil
     
     override func prepareForReuse() {
         self.congressMemberImageView.image = nil
     }
+=======
+>>>>>>> master
 }
