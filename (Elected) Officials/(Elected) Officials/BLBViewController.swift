@@ -34,11 +34,9 @@ class BLBViewController: UIViewController {
     }
     
     func loadImage() {
-        
         var memeApiEndpoint: String {
             return "http://belikebill.azurewebsites.net/billgen-API.php?default=1&name=\(self.firstName!)&sex=\(sex)"
         }
-        
         APIRequestManager.manager.getData(apiEndpoint: memeApiEndpoint) { (data: Data?) in
             if let d = data {
                 if let memeImage = UIImage(data: d) {
@@ -48,6 +46,12 @@ class BLBViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    
+    //MARK: - Actions
+    @IBAction func twitterButtonTapped(_ sender: UIButton) {
+        
     }
     
     
