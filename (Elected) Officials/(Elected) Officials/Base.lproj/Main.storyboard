@@ -117,14 +117,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cuK-QN-yAg">
-                                <rect key="frame" x="36" y="84" width="303" height="563"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuK-QN-yAg">
+                                <rect key="frame" x="36" y="84" width="303" height="423"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQD-dH-dZn">
+                                <rect key="frame" x="212" y="515" width="127" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Twitter-icon"/>
+                                <connections>
+                                    <action selector="twitterButtonTapped:" destination="dwQ-7c-f9R" eventType="touchUpInside" id="8nT-pp-78q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Id4-kW-aOm">
+                                <rect key="frame" x="38" y="543" width="150" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="News API action here."/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="cuK-QN-yAg" secondAttribute="trailing" constant="20" id="8Km-h6-qwf"/>
-                            <constraint firstItem="ICM-Bh-omJ" firstAttribute="top" secondItem="cuK-QN-yAg" secondAttribute="bottom" constant="20" id="CoE-2Z-fEk"/>
                             <constraint firstItem="cuK-QN-yAg" firstAttribute="top" secondItem="Rg6-b2-77R" secondAttribute="bottom" constant="20" id="DPh-a2-cIY"/>
                             <constraint firstItem="cuK-QN-yAg" firstAttribute="leading" secondItem="J72-eF-UnH" secondAttribute="leadingMargin" constant="20" id="zLH-JW-PIf"/>
                         </constraints>
@@ -158,4 +170,7 @@
             <point key="canvasLocation" x="357.60000000000002" y="126.38680659670166"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Twitter-icon" width="128" height="128"/>
+    </resources>
 </document>
