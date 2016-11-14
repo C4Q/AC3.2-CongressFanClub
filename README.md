@@ -22,9 +22,9 @@ enum ParsingErrors: Error {
 ```
 
 It might seem excessive having a myriad of custom errors but "failing gracefully" can help cut the time you take fixing bugs, dramatically. 
-+Unit assessments
-+Interviews
-+Hack-a-thons
++ Unit assessments
++ Interviews
++ Hack-a-thons
 
 
 
