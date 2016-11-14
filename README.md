@@ -72,8 +72,32 @@ This approach isn't very useful for single error situations but can serve as a v
 ###**Twitter Implementation & header for collection view**
 
 + Twitter 
- I learned how to implement the twitter Api which isn’t like other apis. You have to implement the twitter kit which I implemented with fabric, a third party mobile development platform. Once you find the software to implement the timeline to your app it was an interesting experience to put it together so that it shows up. I struggled with figuring out that I needed to use a tableViewController rather than a view controller. 
+ I learned how to implement the twitter Api, which isn’t like other apis. You have to include the twitter kit in the App Delegate which I implemented with fabric, a third party mobile development platform. 
  
+ https://fabric.io/home
+ 
+ ```swift
+ import Fabric
+import TwitterKit
+
+
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        Fabric.with([Twitter.self])
+        return true
+    }
+
+Once you find the software to implement the timeline to your app it was an interesting experience to put it together so that it shows up. Fabric gives shallow tutorials which is why I struggled figuring out that I needed to use a tableViewController rather than a view controller. 
+```
+
+To allow the Twitter timeline to be embbeded in the tableViewController we had to have the class to conform to TWTRTimelineViewController which adopts from UITableViewController. It allows the timeline to be displayed in the app. "This class is a `UITableViewController` subclass that displays `TWTRTweetTableViewCell` cells. It handles cell-reuse, cell-configuration, and loading more Tweets from the given timeline once the last cell is displayed." from quick help in xCode 
+
  ```swift
 import UIKit
 import TwitterKit
