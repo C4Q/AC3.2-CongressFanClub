@@ -72,3 +72,26 @@ This approach isn't very useful for single error situations but can serve as a v
 
 ##Liam
 
+
+What I learned about API Documentation Reading: 
+
+I find it to be very difficult to navigate through the API documentation on most APIs. Many of them seem to be hobbled together in a manner that makes simple GET commands like we have been learning very difficult to use. For example, in the Reddit API, which I could not figure out completely, many of the coding examples and parameter breakdown was based on the more complex and thurough API calls we have yet to learn. The way that I managed to figure out how to read that information was to research more into how URLs are written. 
+
+https://www.reddit.com/dev/api/
+
+If you go into the documentation you will see that it just breaks down the last points of the 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
