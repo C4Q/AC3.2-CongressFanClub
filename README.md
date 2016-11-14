@@ -31,17 +31,36 @@ It might seem excessive having a myriad of custom errors but "failing gracefully
 
 ```swift
 do {
-    try expression
-    statements
-} catch ParsingErrors.x {
-    statements
-} catch {
-    statements
-}
+            let jsonData = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            ...
+            
+            for dict in objectsArray {
+                
+                guard let party = dict["party"] as? String else {
+                    throw ParsingErrors.partyError
+                }
+                
+                let twitterID = personDict["twitterid"] as? String
+                
+                let congressPerson: CongressionalData = CongressionalData(party: party, firstname: firstname, gender: gender, id: id, lastname: lastname, name: name, state: state, roleType: roleType, twitterID: twitterID ?? "")
+                
+                allCongressMembers.append(congressPerson)
+            }
+            return allCongressMembers
+        }
+        catch ParsingErrors.partyError {
+            print("Could not find the party key.")
+        catch {
+            print("Unknown error encountered!")
+        }
+
 ```
 
 ####Syntax Breakdown:
-
+"do" is coupled with "try"
++ If an error is **thrown** by the code in the **do** clause, it's matched against it's respective **catch** clause.
++ After each custom catch clause, a general catch clause needs to be made (note this is similar to the behavior of enums.)
 
 
 
