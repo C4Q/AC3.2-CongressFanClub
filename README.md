@@ -9,8 +9,7 @@ Selecting a member of congress will, additionally, provide access to their Twitt
 
 ```swift
 enum ParsingErrors: Error {
-    case partyError, personError, firstnameError, genderError, idError, lastnameError, 
-    nameError, stateError, roleTypeError, twitterIDError
+    case partyError, personError, firstnameError, genderError, idError, lastnameError, nameError, stateError, roleTypeError, twitterIDError
 }
 ```
 
