@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cnh-JT-FkR">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="S1z-vs-7Yq">
+>>>>>>> d209158bcd1c81ceb1e16727d4fbe8a060cbe96a
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +17,7 @@
         <!--Congress View Controller-->
         <scene sceneID="guf-rQ-jc6">
             <objects>
-                <viewController id="pN4-Gw-RWN" customClass="CongressViewController" customModule="_Elected__Officials" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pN4-Gw-RWN" userLabel="Congress View Controller" customClass="CongressViewController" customModule="_Elected__Officials" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OyO-eO-0OE"/>
                         <viewControllerLayoutGuide type="bottom" id="ryN-SQ-cmM"/>
@@ -29,28 +33,28 @@
                                 </connections>
                             </pickerView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CX6-uC-UVc">
-                                <rect key="frame" x="16" y="280" width="343" height="387"/>
+                                <rect key="frame" x="0.0" y="280" width="375" height="387"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q3i-e1-YeH">
-                                    <size key="itemSize" width="179" height="173"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="itemSize" width="180" height="180"/>
+                                    <size key="headerReferenceSize" width="10" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CongressMemberCell" id="K0W-D8-mgB" customClass="CongressMemberCollectionViewCell" customModule="_Elected__Officials" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="179" height="173"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="congressMemberCell" id="K0W-D8-mgB" customClass="CongressMemberCollectionViewCell" customModule="_Elected__Officials" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="180" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="179" height="173"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lm0-m3-bpU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="173"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFu-0H-A4R">
-                                                    <rect key="frame" x="8" y="150.5" width="163" height="14.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="0.40167487157534248" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="8" y="157.5" width="164" height="14.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -69,9 +73,14 @@
                                         <connections>
                                             <outlet property="congressMemberImageView" destination="lm0-m3-bpU" id="yxG-E4-0iZ"/>
                                             <outlet property="congressMemberNameLabel" destination="FFu-0H-A4R" id="knH-x2-zGf"/>
+                                            <segue destination="dwQ-7c-f9R" kind="show" identifier="congressCellSegue" id="gqV-wn-0Ht"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionHeaderView" id="nbv-oI-2gi" userLabel="sectionHeaderView">
+                                    <rect key="frame" x="0.0" y="0.0" width="10" height="387"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="pN4-Gw-RWN" id="yfE-GX-6Pl"/>
                                     <outlet property="delegate" destination="pN4-Gw-RWN" id="igp-Ti-8tE"/>
@@ -80,13 +89,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="CX6-uC-UVc" secondAttribute="trailing" id="Bad-1s-oYU"/>
                             <constraint firstAttribute="trailing" secondItem="AQb-UT-t3E" secondAttribute="trailing" id="EXb-nG-Ovy"/>
+                            <constraint firstAttribute="trailing" secondItem="CX6-uC-UVc" secondAttribute="trailing" id="F6B-hs-VvZ"/>
                             <constraint firstItem="AQb-UT-t3E" firstAttribute="top" secondItem="OyO-eO-0OE" secondAttribute="bottom" id="FOd-dF-Kc2"/>
                             <constraint firstItem="ryN-SQ-cmM" firstAttribute="top" secondItem="CX6-uC-UVc" secondAttribute="bottom" id="OnQ-5s-srS"/>
                             <constraint firstItem="AQb-UT-t3E" firstAttribute="leading" secondItem="nhj-jI-X2M" secondAttribute="leading" id="Rnf-Xd-nb4"/>
                             <constraint firstItem="CX6-uC-UVc" firstAttribute="top" secondItem="AQb-UT-t3E" secondAttribute="bottom" id="ZzV-sn-8TD"/>
-                            <constraint firstItem="CX6-uC-UVc" firstAttribute="leading" secondItem="nhj-jI-X2M" secondAttribute="leadingMargin" id="kVc-Aj-OIo"/>
+                            <constraint firstItem="CX6-uC-UVc" firstAttribute="leading" secondItem="nhj-jI-X2M" secondAttribute="leading" id="c7D-Y7-h1r"/>
                             <constraint firstItem="CX6-uC-UVc" firstAttribute="top" secondItem="AQb-UT-t3E" secondAttribute="bottom" id="v8c-8F-eGR"/>
                         </constraints>
                     </view>
@@ -98,8 +107,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9b-Zy-KAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1287.2" y="29.23538230884558"/>
+            <point key="canvasLocation" x="1296.8" y="126.38680659670166"/>
         </scene>
+<<<<<<< HEAD
         <!--View Controller-->
         <scene sceneID="vdV-IK-fx7">
             <objects>
@@ -120,21 +130,74 @@
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KKu-UC-gh3">
+=======
+        <!--BLB View Controller-->
+        <scene sceneID="kC7-no-rik">
+>>>>>>> d209158bcd1c81ceb1e16727d4fbe8a060cbe96a
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cnh-JT-FkR" sceneMemberID="viewController">
+                <viewController id="dwQ-7c-f9R" userLabel="BLB View Controller" customClass="BLBViewController" customModule="_Elected__Officials" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rg6-b2-77R"/>
+                        <viewControllerLayoutGuide type="bottom" id="ICM-Bh-omJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J72-eF-UnH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuK-QN-yAg">
+                                <rect key="frame" x="36" y="84" width="303" height="423"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQD-dH-dZn">
+                                <rect key="frame" x="212" y="515" width="127" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Twitter-icon"/>
+                                <connections>
+                                    <action selector="twitterButtonTapped:" destination="dwQ-7c-f9R" eventType="touchUpInside" id="8nT-pp-78q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Id4-kW-aOm">
+                                <rect key="frame" x="38" y="543" width="150" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="News API action here."/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="cuK-QN-yAg" secondAttribute="trailing" constant="20" id="8Km-h6-qwf"/>
+                            <constraint firstItem="cuK-QN-yAg" firstAttribute="top" secondItem="Rg6-b2-77R" secondAttribute="bottom" constant="20" id="DPh-a2-cIY"/>
+                            <constraint firstItem="cuK-QN-yAg" firstAttribute="leading" secondItem="J72-eF-UnH" secondAttribute="leadingMargin" constant="20" id="zLH-JW-PIf"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="HbP-dg-NNH"/>
+                    <connections>
+                        <outlet property="memeImageView" destination="cuK-QN-yAg" id="Vd7-UM-DSN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qge-XT-l5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2176.8000000000002" y="125.4872563718141"/>
+        </scene>
+        <!--115th United States Congress-->
+        <scene sceneID="KCs-cc-0d4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S1z-vs-7Yq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="115th United States Congress" id="SC5-OL-ZA5"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WLp-YU-aLv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z0y-dp-ozi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="pN4-Gw-RWN" kind="relationship" relationship="rootViewController" id="1Rq-lI-B6G"/>
+                        <segue destination="pN4-Gw-RWN" kind="relationship" relationship="rootViewController" id="UJG-Xm-VNm"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wlp-PZ-Bqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpK-Ys-Hfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="348" y="29.23538230884558"/>
+            <point key="canvasLocation" x="357.60000000000002" y="126.38680659670166"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Twitter-icon" width="128" height="128"/>
+    </resources>
 </document>
