@@ -69,6 +69,10 @@ This approach isn't very useful for single error situations but can serve as a v
 
 
 ##Kadell
+### Twitter Implementation & header for collection view
+
+ I learned how to implement the twitter Api which isn’t like other apis. You have to implement the twitter kit which I implemented with fabric, a third party mobile development platform. Once you find the software to implement the timeline to your app it was an interesting experience to put it together so that it shows up. I struggled with figuring out that I needed to use a tableViewController rather than a view controller. Im proud that I was able to figure out and implement something that we’ve never been taught before. I also worked with collection view headers which aren’t as complicated but a useful skill to learn. We ended up not implementing the headers in the app after seeing how it looks. Communication is also incredibly important when it comes to getting the product made at the highest quality. 
+
 
 ##Liam
 
