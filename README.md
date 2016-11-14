@@ -96,7 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 Once you find the software to implement the timeline to your app it was an interesting experience to put it together so that it shows up. Fabric gives shallow tutorials which is why I struggled figuring out that I needed to use a tableViewController rather than a view controller. 
 ```
 
-To allow the Twitter timeline to be embbeded in the tableViewController we had to have the class to conform to TWTRTimelineViewController which adopts from UITableViewController. It allows the timeline to be displayed in the app. "This class is a `UITableViewController` subclass that displays `TWTRTweetTableViewCell` cells. It handles cell-reuse, cell-configuration, and loading more Tweets from the given timeline once the last cell is displayed." from quick help in xCode 
+To allow the Twitter timeline to be embbeded in the tableViewController we had to have the class to conform to TWTRTimelineViewController which adopts from UITableViewController. It allows the timeline to be displayed in the app and gives it full functionality. "This class is a `UITableViewController` subclass that displays `TWTRTweetTableViewCell` cells. It handles cell-reuse, cell-configuration, and loading more Tweets from the given timeline once the last cell is displayed." from quick help in xCode 
 
  ```swift
 import UIKit
