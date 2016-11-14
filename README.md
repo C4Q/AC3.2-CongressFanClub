@@ -26,7 +26,16 @@ It might seem excessive having a myriad of custom errors but "failing gracefully
 + Interviews
 + Hack-a-thons
 
-
+```swift
+do {
+    try expression
+    statements
+} catch pattern 1 {
+    statements
+} catch pattern 2 where condition {
+    statements
+}
+```
 
 
 
