@@ -35,6 +35,7 @@ class BLBViewController: UIViewController {
         super.viewDidLoad()
         loadImage()
         loadBackgroundColor()
+        navigationItem.title = "\(self.firstName!) \(self.lastName!)"
     }
     
     func loadImage() {

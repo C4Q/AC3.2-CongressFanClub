@@ -77,7 +77,23 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCongressMembers()
+        assignbackground()
+        navigationItem.title = "114th U.S. Congress"
         
+    }
+    
+    func assignbackground(){
+        let background = UIImage(named: "Murica")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        imageView.alpha = 0.65
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
     }
     
     internal func loadCongressMembers() {
@@ -115,6 +131,12 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     //MARK: - Picker View Delegate Method
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.congressCollectionView.reloadData()
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = states[row].name
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName: UIColor.darkText])
+        return myTitle
     }
     
     
