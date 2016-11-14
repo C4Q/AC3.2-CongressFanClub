@@ -12,13 +12,18 @@
 		47C47E441DD1223F00051151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C47E421DD1223F00051151 /* Main.storyboard */; };
 		47C47E461DD1223F00051151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47C47E451DD1223F00051151 /* Assets.xcassets */; };
 		47C47E491DD1223F00051151 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C47E471DD1223F00051151 /* LaunchScreen.storyboard */; };
-		47C47E531DD1277500051151 /* CongressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C47E521DD1277500051151 /* CongressViewController.swift */; };
 		47C47E551DD12E5F00051151 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C47E541DD12E5F00051151 /* APIRequestManager.swift */; };
 		47C47E571DD1315C00051151 /* CongressionalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C47E561DD1315C00051151 /* CongressionalData.swift */; };
 		816ED6791DD9092900FB3D7A /* BLBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816ED6781DD9092900FB3D7A /* BLBViewController.swift */; };
 		81EE04DE1DD918EB0056ABA3 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE04DD1DD918EB0056ABA3 /* Article.swift */; };
 		81EE04E01DD91C2A0056ABA3 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE04DF1DD91C2A0056ABA3 /* NewsTableViewController.swift */; };
 		81EE04E21DD91FF50056ABA3 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE04E11DD91FF50056ABA3 /* NewsTableViewCell.swift */; };
+		A200A6C61DD8E40200FD51A9 /* CongressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200A6C51DD8E40200FD51A9 /* CongressViewController.swift */; };
+		A2E9CB481DD3729D0032CCB9 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E9CB441DD3729D0032CCB9 /* Fabric.framework */; };
+		A2E9CB491DD3729D0032CCB9 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E9CB451DD3729D0032CCB9 /* TwitterKit.framework */; };
+		A2E9CB4A1DD3729D0032CCB9 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A2E9CB461DD3729D0032CCB9 /* TwitterKitResources.bundle */; };
+		A2E9CB4B1DD3729D0032CCB9 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E9CB471DD3729D0032CCB9 /* TwitterCore.framework */; };
+		A2E9CB511DD380830032CCB9 /* TwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E9CB501DD380830032CCB9 /* TwitterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,13 +34,18 @@
 		47C47E451DD1223F00051151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47C47E481DD1223F00051151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47C47E4A1DD1223F00051151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47C47E521DD1277500051151 /* CongressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CongressViewController.swift; path = ../CongressViewController.swift; sourceTree = "<group>"; };
 		47C47E541DD12E5F00051151 /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
 		47C47E561DD1315C00051151 /* CongressionalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongressionalData.swift; sourceTree = "<group>"; };
 		816ED6781DD9092900FB3D7A /* BLBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLBViewController.swift; sourceTree = "<group>"; };
 		81EE04DD1DD918EB0056ABA3 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		81EE04DF1DD91C2A0056ABA3 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewController.swift; path = ../NewsTableViewController.swift; sourceTree = "<group>"; };
 		81EE04E11DD91FF50056ABA3 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		A200A6C51DD8E40200FD51A9 /* CongressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongressViewController.swift; sourceTree = "<group>"; };
+		A2E9CB441DD3729D0032CCB9 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		A2E9CB451DD3729D0032CCB9 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = SOURCE_ROOT; };
+		A2E9CB461DD3729D0032CCB9 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = SOURCE_ROOT; };
+		A2E9CB471DD3729D0032CCB9 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = SOURCE_ROOT; };
+		A2E9CB501DD380830032CCB9 /* TwitterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,12 +53,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2E9CB481DD3729D0032CCB9 /* Fabric.framework in Frameworks */,
+				A2E9CB4B1DD3729D0032CCB9 /* TwitterCore.framework in Frameworks */,
+				A2E9CB491DD3729D0032CCB9 /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47BEBD061DDA34EA00240C87 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				81EE04DD1DD918EB0056ABA3 /* Article.swift */,
+				47C47E561DD1315C00051151 /* CongressionalData.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		47C47E321DD1223F00051151 = {
 			isa = PBXGroup;
 			children = (
@@ -68,21 +90,41 @@
 		47C47E3D1DD1223F00051151 /* (Elected) Officials */ = {
 			isa = PBXGroup;
 			children = (
-				81EE04E11DD91FF50056ABA3 /* NewsTableViewCell.swift */,
-				81EE04DF1DD91C2A0056ABA3 /* NewsTableViewController.swift */,
-				816ED6781DD9092900FB3D7A /* BLBViewController.swift */,
-				47C47E541DD12E5F00051151 /* APIRequestManager.swift */,
-				47C47E561DD1315C00051151 /* CongressionalData.swift */,
 				47C47E3E1DD1223F00051151 /* AppDelegate.swift */,
-				47C47E421DD1223F00051151 /* Main.storyboard */,
-				81EE04DD1DD918EB0056ABA3 /* Article.swift */,
-				47C47E521DD1277500051151 /* CongressViewController.swift */,
-				479D1FB61DD24EE7000B8290 /* CongressMemberCollectionViewCell.swift */,
+				A2E9CB4C1DD3739D0032CCB9 /* ViewControllers */,
+				A2E9CB4D1DD373C50032CCB9 /* APIManager */,
+				47BEBD061DDA34EA00240C87 /* Models */,
+				A2E9CB441DD3729D0032CCB9 /* Fabric.framework */,
+				A2E9CB451DD3729D0032CCB9 /* TwitterKit.framework */,
+				A2E9CB461DD3729D0032CCB9 /* TwitterKitResources.bundle */,
+				A2E9CB471DD3729D0032CCB9 /* TwitterCore.framework */,
 				47C47E451DD1223F00051151 /* Assets.xcassets */,
+				47C47E421DD1223F00051151 /* Main.storyboard */,
 				47C47E471DD1223F00051151 /* LaunchScreen.storyboard */,
 				47C47E4A1DD1223F00051151 /* Info.plist */,
 			);
 			path = "(Elected) Officials";
+			sourceTree = "<group>";
+		};
+		A2E9CB4C1DD3739D0032CCB9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A200A6C51DD8E40200FD51A9 /* CongressViewController.swift */,
+				A2E9CB501DD380830032CCB9 /* TwitterViewController.swift */,
+				816ED6781DD9092900FB3D7A /* BLBViewController.swift */,
+				81EE04DF1DD91C2A0056ABA3 /* NewsTableViewController.swift */,
+				81EE04E11DD91FF50056ABA3 /* NewsTableViewCell.swift */,
+				479D1FB61DD24EE7000B8290 /* CongressMemberCollectionViewCell.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A2E9CB4D1DD373C50032CCB9 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				47C47E541DD12E5F00051151 /* APIRequestManager.swift */,
+			);
+			name = APIManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +137,7 @@
 				47C47E371DD1223F00051151 /* Sources */,
 				47C47E381DD1223F00051151 /* Frameworks */,
 				47C47E391DD1223F00051151 /* Resources */,
+				A2E9CB431DD372630032CCB9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -145,6 +188,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2E9CB4A1DD3729D0032CCB9 /* TwitterKitResources.bundle in Resources */,
 				47C47E491DD1223F00051151 /* LaunchScreen.storyboard in Resources */,
 				47C47E461DD1223F00051151 /* Assets.xcassets in Resources */,
 				47C47E441DD1223F00051151 /* Main.storyboard in Resources */,
@@ -152,6 +196,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A2E9CB431DD372630032CCB9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run da5bb84b16d4b5a30104602402474db1ad17dea3 be33f3f4549567ceabc3731f8b3daedb3c496209e322f50f275b3b42e59e0f05";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		47C47E371DD1223F00051151 /* Sources */ = {
@@ -161,12 +221,13 @@
 				47C47E551DD12E5F00051151 /* APIRequestManager.swift in Sources */,
 				816ED6791DD9092900FB3D7A /* BLBViewController.swift in Sources */,
 				479D1FB71DD24EE7000B8290 /* CongressMemberCollectionViewCell.swift in Sources */,
-				47C47E531DD1277500051151 /* CongressViewController.swift in Sources */,
 				81EE04E01DD91C2A0056ABA3 /* NewsTableViewController.swift in Sources */,
 				81EE04DE1DD918EB0056ABA3 /* Article.swift in Sources */,
 				47C47E3F1DD1223F00051151 /* AppDelegate.swift in Sources */,
-				47C47E571DD1315C00051151 /* CongressionalData.swift in Sources */,
 				81EE04E21DD91FF50056ABA3 /* NewsTableViewCell.swift in Sources */,
+				A200A6C61DD8E40200FD51A9 /* CongressViewController.swift in Sources */,
+				47C47E571DD1315C00051151 /* CongressionalData.swift in Sources */,
+				A2E9CB511DD380830032CCB9 /* TwitterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +351,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R7DWEPXN5Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/(Elected)\\ Officials",
+					"$(PROJECT_DIR)/(Elected)\\ Officials",
+					"$(PROJECT_DIR)/(Elected)\\ Officials",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "(Elected) Officials/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.harichandansingh.-Elected--Officials";
@@ -303,6 +371,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R7DWEPXN5Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/(Elected)\\ Officials",
+					"$(PROJECT_DIR)/(Elected)\\ Officials",
+					"$(PROJECT_DIR)/(Elected)\\ Officials",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "(Elected) Officials/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.harichandansingh.-Elected--Officials";

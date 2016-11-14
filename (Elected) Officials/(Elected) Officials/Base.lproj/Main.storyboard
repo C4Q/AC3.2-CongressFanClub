@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="S1z-vs-7Yq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="S1z-vs-7Yq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -117,48 +117,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQD-dH-dZn">
-                                <rect key="frame" x="219" y="523" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="Wuk-Iz-X0i"/>
-                                    <constraint firstAttribute="width" constant="120" id="uei-MN-q1H"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cuK-QN-yAg">
+                                <rect key="frame" x="36" y="84" width="303" height="419"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQD-dH-dZn" userLabel="Twitter Button">
+                                <rect key="frame" x="214" y="515" width="125" height="140"/>
                                 <state key="normal" title="Button" image="Twitter-icon"/>
                                 <connections>
-                                    <action selector="twitterButtonTapped:" destination="dwQ-7c-f9R" eventType="touchUpInside" id="8nT-pp-78q"/>
+                                    <segue destination="Fik-75-HK6" kind="show" identifier="twitterDetail" id="RkP-XP-EBk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Id4-kW-aOm">
-                                <rect key="frame" x="36" y="523" width="120" height="120"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Id4-kW-aOm">
+                                <rect key="frame" x="36" y="515" width="158" height="140"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="OjH-st-aeJ"/>
-                                    <constraint firstAttribute="width" constant="120" id="y9E-qQ-aAh"/>
+                                    <constraint firstAttribute="height" constant="140" id="M8K-V2-c1d"/>
+                                    <constraint firstAttribute="width" constant="158" id="Van-oM-kaO"/>
                                 </constraints>
-                                <state key="normal" image="t_logo_291_black"/>
+                                <state key="normal" title="News API action here." image="New_York_Times_logo_variation"/>
                                 <connections>
-                                    <segue destination="BOD-KJ-9cO" kind="show" identifier="newsSegue" id="04S-8C-cjQ"/>
+                                    <segue destination="BOD-KJ-9cO" kind="show" identifier="handsTooSmallCantBuildAWall" id="i5S-GZ-EQz"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jYb-Zc-4yR">
-                                <rect key="frame" x="16" y="64" width="343" height="434"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Id4-kW-aOm" firstAttribute="leading" secondItem="J72-eF-UnH" secondAttribute="leadingMargin" constant="20" id="Ga2-8I-pEV"/>
-                            <constraint firstItem="nQD-dH-dZn" firstAttribute="top" secondItem="jYb-Zc-4yR" secondAttribute="bottom" constant="25" id="HBd-AW-9gA"/>
-                            <constraint firstItem="jYb-Zc-4yR" firstAttribute="trailing" secondItem="J72-eF-UnH" secondAttribute="trailingMargin" id="Lq0-xY-yYs"/>
-                            <constraint firstItem="ICM-Bh-omJ" firstAttribute="top" secondItem="nQD-dH-dZn" secondAttribute="bottom" constant="24" id="Z8J-eb-14G"/>
-                            <constraint firstItem="ICM-Bh-omJ" firstAttribute="top" secondItem="Id4-kW-aOm" secondAttribute="bottom" constant="24" id="awS-OQ-4KK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nQD-dH-dZn" secondAttribute="trailing" constant="20" id="h8y-qg-R0v"/>
-                            <constraint firstItem="jYb-Zc-4yR" firstAttribute="top" secondItem="Rg6-b2-77R" secondAttribute="bottom" id="ic2-bu-9tx"/>
-                            <constraint firstItem="Id4-kW-aOm" firstAttribute="top" secondItem="jYb-Zc-4yR" secondAttribute="bottom" constant="25" id="uG3-wC-b2L"/>
-                            <constraint firstItem="jYb-Zc-4yR" firstAttribute="leading" secondItem="J72-eF-UnH" secondAttribute="leadingMargin" id="zLN-Bw-od9"/>
+                            <constraint firstItem="cuK-QN-yAg" firstAttribute="leading" secondItem="J72-eF-UnH" secondAttribute="leadingMargin" constant="20" id="72Q-Jd-xYQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nQD-dH-dZn" secondAttribute="trailing" constant="20" id="9Ls-2b-zE3"/>
+                            <constraint firstItem="Id4-kW-aOm" firstAttribute="leading" secondItem="J72-eF-UnH" secondAttribute="leadingMargin" constant="20" id="E2l-cv-VRg"/>
+                            <constraint firstItem="nQD-dH-dZn" firstAttribute="leading" secondItem="Id4-kW-aOm" secondAttribute="trailing" constant="20" id="ImK-0s-hzi"/>
+                            <constraint firstItem="cuK-QN-yAg" firstAttribute="top" secondItem="Rg6-b2-77R" secondAttribute="bottom" constant="20" id="NEI-Vh-DKu"/>
+                            <constraint firstItem="Id4-kW-aOm" firstAttribute="top" secondItem="cuK-QN-yAg" secondAttribute="bottom" constant="12" id="m5M-bI-7vD"/>
+                            <constraint firstItem="ICM-Bh-omJ" firstAttribute="top" secondItem="Id4-kW-aOm" secondAttribute="bottom" constant="12" id="ocg-EW-SdE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cuK-QN-yAg" secondAttribute="trailing" constant="20" id="q9F-Rp-lGG"/>
+                            <constraint firstItem="nQD-dH-dZn" firstAttribute="top" secondItem="cuK-QN-yAg" secondAttribute="bottom" constant="12" id="qx2-9M-BZW"/>
+                            <constraint firstItem="ICM-Bh-omJ" firstAttribute="top" secondItem="nQD-dH-dZn" secondAttribute="bottom" constant="12" id="yXl-Ez-Aye"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="HbP-dg-NNH"/>
                     <connections>
-                        <outlet property="memeImageView" destination="jYb-Zc-4yR" id="UOg-RK-eEz"/>
+                        <outlet property="memeImageView" destination="cuK-QN-yAg" id="QZg-Hk-GZK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qge-XT-l5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,14 +168,13 @@
                 <tableViewController id="BOD-KJ-9cO" customClass="NewsTableViewController" customModule="_Elected__Officials" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="99" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vbz-ps-DMN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="99" id="KJ4-Qp-kev" customClass="NewsTableViewCell" customModule="_Elected__Officials" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KJ4-Qp-kev" id="8lw-ao-FaG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="98.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbr-Ep-zf3">
@@ -220,7 +216,35 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOB-Wx-iWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3351.1999999999998" y="84.107946026986511"/>
+            <point key="canvasLocation" x="2910" y="-423"/>
+        </scene>
+        <!--Twitter View Controller-->
+        <scene sceneID="tyG-mH-81W">
+            <objects>
+                <tableViewController id="Fik-75-HK6" customClass="TwitterViewController" customModule="_Elected__Officials" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uKE-tQ-xr5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WWp-lQ-mGH">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WWp-lQ-mGH" id="aLo-VS-BHb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Fik-75-HK6" id="UmR-OD-5vn"/>
+                            <outlet property="delegate" destination="Fik-75-HK6" id="mlv-6I-1zz"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="stH-AC-cAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2910" y="333"/>
         </scene>
         <!--115th United States Congress-->
         <scene sceneID="KCs-cc-0d4">
@@ -243,7 +267,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="New_York_Times_logo_variation" width="660" height="528"/>
         <image name="Twitter-icon" width="128" height="128"/>
-        <image name="t_logo_291_black" width="291" height="291"/>
     </resources>
 </document>
