@@ -75,7 +75,8 @@ class BLBViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "newsSegue" {
             let dvc = segue.destination as! NewsTableViewController
-            dvc.endPoint = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=31ae7c06e3314e21b83c2b3846fe3f26&q=\(self.firstName)%20\(self.lastName)"
+            dvc.endPoint = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=31ae7c06e3314e21b83c2b3846fe3f26&q=\(self.firstName!.lowercased())+\(self.lastName!.lowercased())"
+            print(dvc.endPoint)
             
             
         }

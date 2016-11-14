@@ -17,12 +17,13 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        APIRequestManager.manager.getData(apiEndpoint: "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=31ae7c06e3314e21b83c2b3846fe3f26") { (data: Data?) in
+        APIRequestManager.manager.getData(apiEndpoint: self.endPoint) { (data: Data?) in
             if let d = data {
                 self.articles = Article.getArticles(data: d) ?? []
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    dump([self.articles[0]])
                 }
             }
         }
