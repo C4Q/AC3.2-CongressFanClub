@@ -9,11 +9,7 @@
 import Foundation
 
 enum ParsingErrors: Error {
-<<<<<<< HEAD
-    case partyError, personError, firstnameError, genderError, idError, lastnameError, nameError, stateError, roleTypeError, twitterNameError
-=======
     case partyError, personError, firstnameError, genderError, idError, lastnameError, nameError, stateError, roleTypeError, twitterIDError
->>>>>>> 24fbaae74200a0e4684bd97c9c4cdb6ac60b72cf
 }
 
 class CongressionalData {
@@ -28,22 +24,14 @@ class CongressionalData {
     var name: String
     var state: String
     var roleType: String
-<<<<<<< HEAD
-    var twitterName: String
-=======
     var twitterID: String
->>>>>>> 24fbaae74200a0e4684bd97c9c4cdb6ac60b72cf
     var imageURL: String {
         return "https://www.govtrack.us/data/photos/\(id)-200px.jpeg"
     }
     
     
     //MARK: - Initializers
-<<<<<<< HEAD
-    init(party: String, firstname: String, gender: String, id: Int, lastname: String, name: String, state: String, roleType: String, twitterName: String ) {
-=======
     init(party: String, firstname: String, gender: String, id: Int, lastname: String, name: String, state: String, roleType: String, twitterID: String) {
->>>>>>> 24fbaae74200a0e4684bd97c9c4cdb6ac60b72cf
         self.party = party
         self.firstname = firstname
         self.gender = gender
@@ -52,11 +40,7 @@ class CongressionalData {
         self.name = name
         self.state = state
         self.roleType = roleType
-<<<<<<< HEAD
-        self.twitterName = twitterName
-=======
         self.twitterID = twitterID
->>>>>>> 24fbaae74200a0e4684bd97c9c4cdb6ac60b72cf
     }
     
     
@@ -108,9 +92,6 @@ class CongressionalData {
                 guard let name = personDict["name"] as? String else {
                     throw ParsingErrors.nameError
                 }
-                guard let twitter = personDict["twitterid"] as? String else {
-                    throw ParsingErrors.twitterNameError
-                }
                 
                 guard let state = dict["state"] as? String else {
                     throw ParsingErrors.stateError
@@ -120,16 +101,9 @@ class CongressionalData {
                     throw ParsingErrors.roleTypeError
                 }
                 
-<<<<<<< HEAD
-               
-                
-                
-                let congressPerson: CongressionalData = CongressionalData(party: party, firstname: firstname, gender: gender, id: id, lastname: lastname, name: name, state: state, roleType: roleType, twitterName: twitter)
-=======
                 let twitterID = personDict["twitterid"] as? String
                 
                 let congressPerson: CongressionalData = CongressionalData(party: party, firstname: firstname, gender: gender, id: id, lastname: lastname, name: name, state: state, roleType: roleType, twitterID: twitterID ?? "")
->>>>>>> 24fbaae74200a0e4684bd97c9c4cdb6ac60b72cf
                 
                 allCongressMembers.append(congressPerson)
             }
@@ -159,13 +133,8 @@ class CongressionalData {
         catch ParsingErrors.roleTypeError {
             print("Could not find role_type key.")
         }
-<<<<<<< HEAD
-        catch ParsingErrors.twitterNameError {
-             print("Could not find twitterid key.")
-=======
         catch ParsingErrors.twitterIDError {
             print("Could not find twitterid key.")
->>>>>>> 24fbaae74200a0e4684bd97c9c4cdb6ac60b72cf
         }
         catch {
             print("Unknown error encountered!")

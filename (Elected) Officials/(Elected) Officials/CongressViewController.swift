@@ -225,6 +225,8 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                             
                             blb.firstName = currentSenator[collectionCellIndexPath.item].firstname
                             blb.gender = currentSenator[collectionCellIndexPath.item].gender
+                            blb.twitter = currentSenator[collectionCellIndexPath.item].twitterID
+                            
                             
                         default:
                             let currentRep = filterByRoleType(roleType: "representative").filter({ $0.state == states[statePickerView.selectedRow(inComponent: 0)].key
@@ -232,6 +234,7 @@ class CongressViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                             
                             blb.firstName = currentRep[collectionCellIndexPath.item].firstname
                             blb.gender = currentRep[collectionCellIndexPath.item].gender
+                            blb.twitter = currentRep[collectionCellIndexPath.item].twitterID
                             
                         }
                         
