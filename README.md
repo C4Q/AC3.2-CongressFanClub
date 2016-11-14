@@ -30,9 +30,9 @@ It might seem excessive having a myriad of custom errors but "failing gracefully
 do {
     try expression
     statements
-} catch pattern 1 {
+} catch ParsingErrors.x {
     statements
-} catch pattern 2 where condition {
+} catch {
     statements
 }
 ```
