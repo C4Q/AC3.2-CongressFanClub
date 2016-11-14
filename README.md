@@ -81,5 +81,41 @@ This approach isn't very useful for single error situations but can serve as a v
  Communication is also incredibly important when it comes to getting the product made at the highest quality. 
 
 
+
 ##Liam
 
+What I learned about API Documentation Reading: 
+
+I find it to be very difficult to navigate through the API documentation on most APIs. Many of them seem to be hobbled together in a manner that makes simple GET commands like we have been learning very difficult to use. For example, in the Reddit API, which I could not figure out completely, many of the coding examples and parameter breakdown was based on the more complex and thurough API calls we have yet to learn. The way that I managed to figure out how to read that information was to research more into how URLs are written. 
+
+https://www.reddit.com/dev/api/
+
+If you go into the documentation you will see that it just breaks down the last points of the endpoint. In this particular documentation it doesn't tell you the complete endpoint, you have to construct it using URL syntax. In this case you take the origin URL (https://www.reddit.com) and add in the type of data you want, this is done by adding /api/info.json to the end of the url. From there you will find that one needs to add parameters that aren't articulated completely in the documentation. Through throwing together the urls and inputting them into my browser, I found that they are almost all individualized. 
+
+When compared to the New York Times API documentation, which clearly provides the parameters and will even make an example to call to show the information you should be getting from that call, I realised that I have much to learn regarding URL construction and API calls. In the case of this project I ended up using the Article Search API. At first the endpoint was unclear, all that the first page provided was the end of the URL. Upon clicking try it out I looked at the example code they provided and constructed the API endpoint based on reading the complex call they provided.
+
+```javascript
+var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+    $.ajax({
+        url: url,
+        method: 'GET',
+    }).done(function(result) {
+        console.log(result);
+    }).fail(function(err) {
+        throw err;
+});
+```
+
+The base endpoint is the string that is getting modified :
+
+https://api.nytimes.com/svc/search/v2/articlesearch.json
+
+At this point I went back to the original page and clicked around to get a feel for how the URL was constructed. I learned that to construct the URL you have to add a ? to designate that the following parts of the URL will be that parameters to be filled. For example to input the API key which is needed to access the information on this API, it looks like this: 
+
+https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=\(api key sent by NYTimes)
+
+To find what the additional parameters are one has to look at the documentation and match the keys and add them onto the call by chaining them with an ampersand like so:
+
+https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=\(api key sent by NYTimes)&q=\(search)
+
+Ultimately what I learned about reading documentation is that it will never tell the whole story. Much like learning the syntax for Swift in the first couple weeks of our class, ultimately playing around and breaking the urls is the most effective way to understand exactly how they work. 
