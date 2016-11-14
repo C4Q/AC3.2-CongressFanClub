@@ -10,6 +10,7 @@ import UIKit
 
 class BLBViewController: UIViewController {
     //MARK: Properties
+    
     var gender: String?
     var firstName: String?
     var sex: String {
@@ -20,7 +21,7 @@ class BLBViewController: UIViewController {
             return "f"
         }
     }
-
+    var twitter: String?
     
     
     //MARK: - Outlets
@@ -49,11 +50,6 @@ class BLBViewController: UIViewController {
     }
     
     
-    //MARK: - Actions
-    @IBAction func twitterButtonTapped(_ sender: UIButton) {
-        
-    }
-    
     
     //    override func viewDidAppear(_ animated: Bool) {
     //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -64,15 +60,19 @@ class BLBViewController: UIViewController {
     //
     //    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let twVC = segue.destination as? TwitterViewController {
+            if segue.identifier == "twitterDetail" {
+                twVC.twitterHandle = twitter
+            }
+        }
+        
+    }
+    
     
 }
 
