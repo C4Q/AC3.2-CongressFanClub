@@ -109,7 +109,7 @@ class TwitterViewController: TWTRTimelineViewController {
     
 
  + Collection View Header 
- I also worked with collection view headers which aren’t as complicated but a useful skill to learn. We ended up not implementing the headers in the app after seeing how it looks. 
+ I worked with collection view headers which aren’t as complicated but a useful skill to learn. We ended up not implementing the headers in the app after seeing how it looks. When you select header it brings up an automatic header, you can place a label or image into the header to display your title for each section you want to display.   
  
  + Communication 
  Communication is also incredibly important when it comes to getting the product made at the highest quality. 
