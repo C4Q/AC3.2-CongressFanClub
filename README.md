@@ -7,7 +7,11 @@ Selecting a member of congress will, additionally, provide access to their Twitt
 
 ###**The Argument For Always Using Custom Error-Handling In Your Project Model**
 
-
+```swift
+enum ParsingErrors: Error {
+    case partyError, personError, firstnameError, genderError, idError, lastnameError, nameError, stateError, roleTypeError, twitterIDError
+}
+```
 
 
 
