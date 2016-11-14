@@ -61,7 +61,7 @@ do {
 "do" is coupled with "try"
 + If an error is **thrown** by the code in the **do** clause, it's matched against it's respective **catch** clause.
 + After each custom catch clause, a general catch clause needs to be made (note this is similar to the behavior of enums.)
-
++ The catch clause matches any error and binds the error to a local constant named __error__ (not being used in the example above).
 
 
 
