@@ -64,6 +64,7 @@ do {
 + The catch clause matches any error and binds the error to a local constant named __error__ (not being used in the example above).
 
 
+This approach isn't very useful for single error situations but can serve as a valuable tool when dealing with a large number of values.
 
 
 
